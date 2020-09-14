@@ -8,7 +8,7 @@ export default function AllCourses(props) {
        <> 
         <h1> All Courses</h1>
          <form onSubmit={(e) => props.createCourse(e)}>
-        AllCourses Name: <input type="text" name="name" />
+        Course Name: <input type="text" name="courseName" />
         <input type="submit" value="New Course" />
       </form>
 

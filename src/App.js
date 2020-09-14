@@ -20,63 +20,70 @@ const backendUrl =
 
 class App extends Component {
   constructor(props) {
-    super()
+    super();
     this.state = {
-      courses:[]
-    }
+      courses: [],
+    };
   }
   componentDidMount() {
-    this.getCourses()
+    this.getCourses();
   }
-  getCourses = async() => {
+  getCourses = async () => {
     let courses = await axios.get(`${backendUrl}/course`);
     console.log(courses);
     this.setState({
-      courses:courses.data.courses
-    })
+      courses: courses.data.courses,
+    });
+  };
 
-  }
-   render() {
-  
-
+  createCourse = async (e) => {
+    e.preventDefault();
+    console.log(e.target.courseName.value);
+  };
+  updateCourse = async (e) => {
+    e.preventDefault();
+    console.log(e.target.courseName.value);
+  };
+  render() {
     return (
       <div className="App">
         <nav>
           <h4>Welcome to Your Golf Course Page</h4>
           <Link to="/">
-            Go Home 
-             <br>
-            </br>
+            Go Home
             <br></br>
-        </Link>
+            <br></br>
+          </Link>
           <Link to="/allcourses">Go to Your Courses</Link>
         </nav>
-      
 
         <Switch>
-          <Route
-            exact path="/" render={Home} />
+          <Route exact path="/" render={Home} />
           <Route
             path="/allcourses"
-            component={
-              (routerProps) => (
-                <AllCourses createCourse={this.createCourse}{...routerProps}{...this.state} />
-              )
-            
-          
-            } />
-        
+            component={(routerProps) => (
+              <AllCourses
+                createCourse={this.createCourse}
+                {...routerProps}
+                {...this.state}
+              />
+            )}
+          />
+
           <Route
             exact
             path="/courses/:id"
             component={(routerProps) => (
-              <CourseDetail {...routerProps}{...this.state} />
-              
+              <CourseDetail
+                {...routerProps}
+                courses={this.state.courses}
+                updateCourse={this.updateCourse}
+              />
             )}
           />
         </Switch>
       </div>
     );
-  }      
+  }
 };
 export default App;

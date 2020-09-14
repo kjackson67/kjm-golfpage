@@ -60,7 +60,7 @@ class App extends Component {
             path="/allcourses"
             component={
               (routerProps) => (
-                <AllCourses {...routerProps}{...this.state} />
+                <AllCourses createCourse={this.createCourse}{...routerProps}{...this.state} />
               )
             
           
@@ -68,9 +68,10 @@ class App extends Component {
         
           <Route
             exact
-            path="/coursedetails/:id"
+            path="/courses/:id"
             component={(routerProps) => (
-              <CourseDetail {...routerProps} />
+              <CourseDetail {...routerProps}{...this.state} />
+              
             )}
           />
         </Switch>

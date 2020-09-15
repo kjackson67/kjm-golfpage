@@ -14,35 +14,39 @@ return (
     <>
         <h1> {course.courseName} Details </h1>
     <h3> Edit {course.courseName} Form</h3>
-    <form onSubmit={(e) => props.updateCourse(e)}>
+    <form onSubmit={(e) => props.updateCourse(e)}
+    onChange={props.handleChange}>
+    
       <input type="text" name="courseName" placeholder={course.courseName} />
+        <input type="hidden" name="courseId" value={course.id} />
             <br></br>Location: {course.location}
-            <input type="text" name="Location" placeholder={course.location}/>
+            <input onChange={ (e) => props.handleChange(e)} type="text" name="location" />
             <input type="submit" value="Update Location" />
-    </form> 
+
             <br></br>Par:  {course.par}
-            <input type="text" name="Par" placeholder={course.par}/>
+            <input onChange={ (e) => props.handleChange(e)} type="text" name="par" placeholder={course.par}/>
             <input type="submit" value="Update Par" />
             
             <br></br>Rating:  {course.rating}
-            <input type="text" name="Rating" placeholder={course.rating}/>
+            <input onChange={ (e) => props.handleChange(e)} type="text" name="rating" placeholder={course.rating}/>
             <input type="submit" value="Update Rating" />
             
             <br></br>
             Slope:  {course.slope}
-            <input type="text" name="Slope" placeholder={course.slope}/>
+            <input onChange={ (e) => props.handleChange(e)} type="text" name="slope" placeholder={course.slope}/>
             <input type="submit" value="Update Slope" />
             <br></br>
 
             Tee:  {course.tee}
-            <input type="text" name="Tee" placeholder={course.tee}/>
+            <input onChange={ (e) => props.handleChange(e)} type="text" name="tee" placeholder={course.tee}/>
             <input type="submit" value="Update Tee" />
             
             <br></br>
             Yardage:  {course.yardage}
-            <input type="text" name="Yardage" placeholder={course.yardage}/>
+            <input onChange={ (e) => props.handleChange(e)} type="text" name="yardage" placeholder={course.yardage}/>
             <input type="submit" value="Update Yardage" />
-    
+    </form> 
+
     </>
 );
 

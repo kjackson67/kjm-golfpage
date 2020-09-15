@@ -51,15 +51,25 @@ class App extends Component {
     });
     console.log(e.target.courseName.value);
   };
-
+handleChange = (e) => {
+  e.preventDefault();
+  console.log(e.target);
+  this.setState ({
+  [e.target.name]:e.target.value,
+  })
+}
   updateCourse = async (e) => {
-    let courses = await axios.push(`${backendUrl}/course`);
+    e.preventDefault();
+    let upDatedCourse = {...this.state}
+    console.log(upDatedCourse);
+    let courses = await axios.put(`${backendUrl}/course/${e.target.courseId.value}`, upDatedCourse);
     console.log(courses);
     
-    e.preventDefault();
+    
     console.log(e.target.courseName.value);
   };
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <nav>
@@ -93,6 +103,7 @@ class App extends Component {
                 {...routerProps}
                 courses={this.state.courses}
                 updateCourse={this.updateCourse}
+                handleChange={(e) => this.handleChange(e)}
               />
             )}
           />

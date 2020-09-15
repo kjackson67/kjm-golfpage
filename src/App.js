@@ -36,11 +36,26 @@ class App extends Component {
     });
   };
 
-  createCourse = async (e) => {
+  createCourse = (e) => {
     e.preventDefault();
+    axios.post(`${backendUrl}/courses`, {
+      courseName: e.target.courseName.value,
+    })
+    .then((response) => {
+      console.log(response);
+      let tempCourse = this.state.courses;
+      tempCourse.push(response.data.course);
+      this.setState({
+        courses: tempCourse,
+      });
+    });
     console.log(e.target.courseName.value);
   };
+
   updateCourse = async (e) => {
+    let courses = await axios.push(`${backendUrl}/course`);
+    console.log(courses);
+    
     e.preventDefault();
     console.log(e.target.courseName.value);
   };

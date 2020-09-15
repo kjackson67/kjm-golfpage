@@ -18,17 +18,23 @@ return (
             <input type = "text" name="courseName" placeholder={course.courseName} />
         
             <br>
-            </br>Location:{course.location}<br>
+            
+            </br>Location:  {course.location}<br>
+            
             </br>
-            Par:{course.par}<br>
+            Par:  {course.par}<br>
+            
             </br>
-            Rating:{course.rating}<br>
+            Rating:  {course.rating}<br>
+            
             </br>
-            Slope:{course.slope}<br>
+            Slope:  {course.slope}<br>
+            
             </br>
-            Tee:{course.tee}<br>
+            Tee:  {course.tee}<br>
+            
             </br>
-            Yardage:{course.yardage}
+            Yardage:  {course.yardage}
 
             
         </form>

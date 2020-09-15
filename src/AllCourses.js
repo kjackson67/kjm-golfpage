@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CourseDetail from "./CourseDetail";
-
+import "./AllCourses.css";
 export default function AllCourses(props) {
     console.log(props)
     return (
@@ -15,7 +15,8 @@ export default function AllCourses(props) {
       <ul>
                 {props.courses.map((course, index) => {
                     return (
-                        <li key={course.id}>
+                        <div class="parent"
+                         key={course.id}>
                             <br></br>
                             <Link to={`/courses/${course.id}`} key={course.id}>
                                 {course.courseName}
@@ -30,7 +31,8 @@ export default function AllCourses(props) {
                             >
                                 Delete
               </button>
-                        </li>
+                        
+                        </div>
                     );
 
 })}

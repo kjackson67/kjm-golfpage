@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
 import "./App.css";
-import { Route, Link, Switch, Redirect } from "react-router-dom";
+import { Route, Link, Switch, Redirect, withRouter } from "react-router-dom";
 import axios from "axios";
 import Home from "./Home";
 import AllCourses from "./AllCourses";
@@ -51,25 +51,25 @@ class App extends Component {
     });
     console.log(e.target.courseName.value);
   };
-handleChange = (e) => {
-  e.preventDefault();
-  console.log(e.target);
-  this.setState ({
-  [e.target.name]:e.target.value,
-  })
-}
-  updateCourse = async (e) => {
-    e.preventDefault();
-    let upDatedCourse = {...this.state}
-    console.log(upDatedCourse);
-    let courses = await axios.put(`${backendUrl}/course/${e.target.courseId.value}`, upDatedCourse);
-    console.log(courses);
-    
-    
-    console.log(e.target.courseName.value);
+// handleChange = (e) => {
+//   e.preventDefault();
+//   console.log(e.target);
+//   this.setState ({
+//   [e.target.name]:e.target.value,
+//   })
+// }
+
+  updateCourse = async (updatedCourseArg) => {
+    // e.preventDefault();
+    let updatedCourse = {...updatedCourseArg}
+    console.log(updatedCourse);
+    let course = await axios.put(`${backendUrl}/course/${updatedCourse.courseId}`, updatedCourse
+  );
+  this.props.history.push("/allCourses");
   };
+
   render() {
-    console.log(this.state);
+    console.log(this.props);
     return (
       <div className="App">
         <nav>
@@ -102,8 +102,9 @@ handleChange = (e) => {
               <CourseDetail
                 {...routerProps}
                 courses={this.state.courses}
-                updateCourse={this.updateCourse}
-                handleChange={(e) => this.handleChange(e)}
+                updateCourse={(updatedCourse) =>
+                  this.updateCourse(updatedCourse)
+                }
               />
             )}
           />
@@ -112,4 +113,4 @@ handleChange = (e) => {
     );
   }
 };
-export default App;
+export default withRouter(App);

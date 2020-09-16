@@ -5,7 +5,7 @@ function Home() {
     <div>
       <h1>Welcome to The Golf Course Application </h1>
       <header className="App-header">
-        <img src={"./course.jpg"} alt="image not available" />
+        <img src={"./course.jpg"} alt="img not available" />
       </header>
     </div>
   );

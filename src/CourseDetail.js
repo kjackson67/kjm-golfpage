@@ -5,7 +5,7 @@ export default function CourseDetail(props) {
     console.log("this is the details page")
     console.log(props);
     const course = props.courses.find((course) => {
-     return course.id == props.match.params.id
+     return course.id === props.match.params.id
     })   
     console.log(course);
 

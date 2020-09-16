@@ -44,7 +44,7 @@ class App extends Component {
     .then((response) => {
       console.log(response);
       let tempCourse = this.state.courses;
-      tempCourse.push(response.data.course);
+      tempCourse.push(response.data.newCourse);
       this.setState({
         courses: tempCourse,
       });
@@ -65,8 +65,9 @@ class App extends Component {
     console.log(updatedCourse);
     let course = await axios.put(`${backendUrl}/course/${updatedCourse.courseId}`, updatedCourse
   );
-  this.props.history.push("/allCourses");
-  };
+  await this.getCourses();
+  this.props.history.push("/allCourses")
+  }
 
   // deleteCourse = async (e) => {
   //   e.preventDefault();

@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import CourseDetail from './CourseDetail'
 import './AllCourses.css'
+
 export default function AllCourses(props) {
   console.log(props)
   return (
@@ -21,13 +22,13 @@ export default function AllCourses(props) {
                 {course.courseName}
               </Link>
 
-              <button
+              {/* <button
                 key={`button-${course.id}`}
                 id={course.id}
                 arrayindex={index}
                 onClick={props.deleteCourse}>
                 Delete
-              </button>
+              </button> */}
             </div>
           );
         })}

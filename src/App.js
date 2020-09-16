@@ -38,7 +38,7 @@ class App extends Component {
 
   createCourse = (e) => {
     e.preventDefault();
-    axios.post(`${backendUrl}/courses`, {
+    axios.post(`${backendUrl}/course`, {
       courseName: e.target.courseName.value,
     })
     .then((response) => {
@@ -61,12 +61,25 @@ class App extends Component {
 
   updateCourse = async (updatedCourseArg) => {
     // e.preventDefault();
-    let updatedCourse = {...updatedCourseArg}
+    let updatedCourse = {...updatedCourseArg};
     console.log(updatedCourse);
     let course = await axios.put(`${backendUrl}/course/${updatedCourse.courseId}`, updatedCourse
   );
   this.props.history.push("/allCourses");
   };
+
+  // deleteCourse = async (e) => {
+  //   e.preventDefault();
+  //   let courseId = parseInt(e.target.id);
+  //   let arrayIndex = e.target.getAttribute("arrayindex");
+  //   await axios.delete(`${backendUrl}/courses/${courseId}`);
+  //   console.log(courseId)
+
+  //   const coursesCopy = [...courses];
+  //   coursesCopy.splice(arrayIndex, 1);
+  //   await setCourses([...coursesCopy]);
+  // };
+
 
   render() {
     console.log(this.props);
@@ -91,6 +104,9 @@ class App extends Component {
                 createCourse={this.createCourse}
                 {...routerProps}
                 {...this.state}
+                deleteCourse={this.deleteCourse}
+                {...routerProps}
+                {...routerProps}
               />
             )}
           />

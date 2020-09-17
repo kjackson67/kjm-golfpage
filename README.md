@@ -6,9 +6,9 @@ This is the final project - our "Capstone Project" utilizing both Node/Express b
 
 # USER STORIES
 
-As a user, I want to be able to 'look up' local or national golf courses that I'd be interested to play.
+As a user, I want to be able to add any local or national golf courses that I'd be interested to play.
 As a user, I want to be able to look up a golf courses main score card information so that I can get an idea of the courses difficulty.
-As a user, I want to be able to add a golf course if it is not listed so that I can use it for future use.
+As a user, I want to be able to review a golf course if it is not listed so that I can use it for future use.
 As a user, I want to edit a golf course if the golf course has been changed or updated so that I can keep the course information accurate.
 
 # Stretch Goal\*
@@ -25,6 +25,8 @@ Github repo, Heroku deployment to production, Project2, REACT, PGAdmin, Postgres
 
 (https://media.git.generalassemb.ly/user/29081/files/362e5400-f81c-11ea-97ee-9aedda3a21fb)
 https://kjm-golfpage.herokuapp.com/
+Users/kj90505/sei/projects/kjm-golfpage/Screen Shot 2020-09-14 at 11.09.44 AM.png
+
 
 We used/created a wireframe data flow to show a snapshot of what we wanted product to look like flowing from backend into the frontend utilizing a navigation bar to home page and details page.
 

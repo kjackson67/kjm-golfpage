@@ -5,10 +5,9 @@ function Home() {
     <div>
       <h1>Welcome to The Golf Course Application </h1>
       <header className="App-header">
-        <img src={"./course.jpg"} alt="img not available" />
+        <img className="pic" src={"./course.jpg"} alt="img not available" />
       </header>
     </div>
   );
 }
-
 export default Home;

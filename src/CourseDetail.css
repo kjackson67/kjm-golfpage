@@ -1,5 +1,29 @@
 html {
+  font-size: 21px;
   background-color: lightgray;
-  background: url("./dimples.png");
+  /* background: url("./dimples.png"); */
 }
-/* testing */
+.parent {
+background-image: url("./golf-course-background-4035417__340.webp");
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+grid-column-gap: 14px;
+grid-gap: 5px;
+border: 6px solid green;
+font-size: 20px;
+padding-bottom: 20px;
+}
+.upd {
+font-size: 20px
+}
+.box {
+ justify-self: center;
+  width: 75px;
+ height: 25px;
+}
+.loc {
+ justify-self: center;
+  width: 150px;
+ height: 30px;
+}

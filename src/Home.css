@@ -2,3 +2,9 @@ html {
   background-color: lightgray;
   background: url("./dimples.png");
 }
+.pic {
+  padding-bottom: 400px;
+  padding-top: 25px;
+  padding-right: 30px;
+  padding-left: 30px;
+}

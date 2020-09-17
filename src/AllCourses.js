@@ -12,16 +12,18 @@ export default function AllCourses(props) {
         Course Name: <input type="text" name="courseName" />
         <input type="submit" value="New Course" />
       </form>
-
       <ul>
         {props.courses.map((course, index) => {
           return (
-            <div className="parent" key={course.id}>
+            <div className="acparent" key={course.id}>
               <br></br>
-              <Link to={`/courses/${course.id}`} key={course.id}>
+              <Link
+                className="nameColor"
+                to={`/courses/${course.id}`}
+                key={course.id}
+              >
                 {course.courseName}
               </Link>
-
               {/* <button
                 key={`button-${course.id}`}
                 id={course.id}

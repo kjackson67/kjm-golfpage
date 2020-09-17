@@ -25,7 +25,7 @@ Github repo, Heroku deployment to production, Project2, REACT, PGAdmin, Postgres
 
 (https://media.git.generalassemb.ly/user/29081/files/362e5400-f81c-11ea-97ee-9aedda3a21fb)
 https://kjm-golfpage.herokuapp.com/
-Users/kj90505/sei/projects/kjm-golfpage/Screen Shot 2020-09-14 at 11.09.44 AM.png
+
 
 
 We used/created a wireframe data flow to show a snapshot of what we wanted product to look like flowing from backend into the frontend utilizing a navigation bar to home page and details page.
